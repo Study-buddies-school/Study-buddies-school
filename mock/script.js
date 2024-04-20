@@ -7,6 +7,22 @@ const iframeElement = document.querySelector('iframe');
 // Set the initial time remaining in seconds
 let timeRemaining = 60;
 
+// Function to submit the form
+function submitForm() {
+  const iframeWindow = iframeElement.contentWindow;
+  const iframeDocument = iframeWindow.document;
+  const formElement = iframeDocument.querySelector('form');
+
+  if (formElement) {
+    const submitButton = formElement.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.click();
+    } else {
+      formElement.submit();
+    }
+  }
+}
+
 // Update the timer every second
 const timerInterval = setInterval(() => {
   // Decrement the time remaining
@@ -18,6 +34,6 @@ const timerInterval = setInterval(() => {
   // If the time is up, submit the form
   if (timeRemaining === 0) {
     clearInterval(timerInterval);
-    iframeElement.contentWindow.document.querySelector('form').submit();
+    submitForm();
   }
 }, 1000);
