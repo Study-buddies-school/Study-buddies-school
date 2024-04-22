@@ -1,0 +1,244 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f0f0f0;
+    transition: background-color 1s ease; /* Transition effect for background color */
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    display: flex;
+}
+
+.notice-board {
+    width: 30%;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    background-color: #fff; /* Off white background color */
+}
+
+.content-area {
+    width: 70%;
+    padding: 1rem;
+}
+
+.buttons {
+    position: relative; /* Positioning context for absolute positioning */
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: space-between; /* Spread buttons evenly */
+    margin-bottom: 1rem;
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    flex-grow: 1; /* Equal width for all buttons */
+    margin-right: 1rem; /* Add spacing between buttons */
+    border-radius: 15px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition effect for hover */
+}
+
+.collapsible:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-radius: 15px; /* Rounded corners */
+}
+.content {
+    background-color: #ddd; /* Background color */
+    padding: 1rem; /* Adjust padding */
+    margin-top: 0.5rem; /* Add some space between button and content */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.collapsible.active + .content {
+    display: block;
+}
+
+.content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content ul li {
+    padding: 0.5rem 0;
+}
+
+.image img {
+    width: 100%;
+    animation: slideImage 5s infinite; /* Animation for sliding images */
+}
+
+@keyframes slideImage {
+    0%, 100% {
+        opacity: 1;
+    }
+    20%, 80% {
+        opacity: 0;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+
+.window {
+    width: 90%; /* Adjust width to your preference */
+    height: 75%; /* 3:4 aspect ratio */
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.main-image {
+    width: 200%; /* Double the width to create the sliding effect */
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: slideImage 30s linear infinite; /* Adjust duration as needed */
+}
+
+.sale-image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Start off-screen */
+}
+
+@keyframes slideImage {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.light-background {
+    background-color: #f0f0f0; /* Light background */
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    margin-bottom: 1rem; /* Adjust margin as needed */
+    border-radius: 15px; /* Rounded corners */
+}
+
+/* Existing styles */
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ddd; /* Background color */
+    padding: 0.5rem; /* Adjust padding */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 1; /* Ensure submenu appears above other content */
+}
+
+/* Additional styles for submenu to appear on hover */
+.nav li:hover .submenu {
+    display: block;
+}
+
+.submenu ul {
+    display: block; /* Display submenu items as block elements */
+}
+
+.header-link {
+    position: relative; /* Ensure submenu appears relative to the parent link */
+}
+
+.header-link:focus + .submenu {
+    display: block;
+}
+
+.blinking-text {
+        color: red; /* Text color */
+        animation: blink 3s infinite; /* Blinking animation */
+    }
+
+@keyframes blink {
+        0% { opacity: 1; } /* Visible */
+        50% { opacity: 0; } /* Invisible */
+        100% { opacity: 1; } /* Visible */
+    }
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+.mySlides {
+    display: none;
+  }
+
+img {
+    width: 100%;
+    height: auto;
+  }
+  .bottom-text {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Adjust padding as needed */
+  }  
